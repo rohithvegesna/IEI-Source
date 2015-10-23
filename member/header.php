@@ -34,6 +34,9 @@
                         <a <?php if($_SESSION['PageTitle'] == 'Group Chat') echo 'class="active-menu"'; ?>href="grpchat.php"><i class="fa fa-comment"></i> Chat</a>
                     </li>
                     <li>
+                        <a <?php if($_SESSION['PageTitle'] == 'News') echo 'class="active-menu"'; ?>href="news.php"><i class="fa fa-file-text"></i> News</a>
+                    </li>
+                    <li>
                         <a <?php if($_SESSION['PageTitle'] == 'Activity Center') echo 'class="active-menu"'; ?>href="blog.php"><i class="fa fa-bullhorn"></i> Activity Center</a>
                     </li>
                     <li>
