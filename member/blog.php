@@ -22,8 +22,11 @@ function stopRKey(evt) {
   if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
 } 
 
-document.onkeypress = stopRKey; 
+document.onkeypress = stopRKey;
 
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
 </script>
                 <div class="col-md-12">
 					<form data-toggle="validator" action="functions/blogset.php" method="post" role="form">
@@ -54,11 +57,17 @@ document.onkeypress = stopRKey;
 					'<div class="jumbotron">'.
 						'<div class="text-center">'.
 							'<strong><h2>'.$array['Heading'].'</h2></strong>'.
-						'</div>'.
+						'</div><br />'.
 						'<div class="col-sm-12" style="color:grey">'.
 							$array['UserName'].' <div class="label label-success">'.$time.'</div>'.
 						'</div><br/><hr>'.
-						'<p class="text-center">'.$array['Matter'].'</p>';
+						'<p class="text-center">'.$array['Matter'].'</p>'.
+						'<div class="col-sm-4">'.
+						'<a href="http://www.facebook.com/sharer/sharer.php?u=http://ieiscgitam.in/blogshare.php?id='.$array['ID'].'" target="_blank" class="share-btn facebook"><button type="button" class="btn btn-success">Share</button></a>'.
+						'</div>'.
+						'<div class="col-sm-4">'.
+						'<a class="btn btn-success" data-toggle="popover" title="Copy this link" data-content="http://ieiscgitam.in/blogshare.php?id='.$array['ID'].'">Share Link</a>'.
+						'</div>';
 			if($_SESSION['userName'] == $array['UserName'])
 			{
 				echo '<div class="col-sm-4">'.
